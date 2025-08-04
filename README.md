@@ -36,8 +36,7 @@ This project is a sample **DevOps platform setup** featuring a FastAPI service w
 
 
 
-
-
+---
 ## 📁 Project Structure
 
 ci.yml                # GitHub Actions pipeline
@@ -53,7 +52,7 @@ README.md                 # You're here!
 
 
 
-
+---
 ## 🚀 Features
 
 🐍 FastAPI + Redis key-value API
@@ -71,7 +70,7 @@ README.md                 # You're here!
 
 
 
-
+---
 ## 🧪 API Endpoints
 
 GET /
@@ -84,7 +83,7 @@ POST /write/{key}?value=xxx
 
 
 
-
+---
 ## ⚙️ CI/CD Pipeline
 
 Tool: GitHub Actions
@@ -102,7 +101,7 @@ Steps:
 
 
 
-
+---
 ## 🐋 Docker Compose Services
 
 services:
@@ -134,7 +133,7 @@ curl http://localhost:9200/fluentbit/_search?pretty
 
 
 
-
+---
 ## 📚 Future Work
 
  Add tools like watchtower to get latest version of app's image automatically
@@ -155,7 +154,7 @@ curl http://localhost:9200/fluentbit/_search?pretty
 
 
 
-
+---
 ## 👤 Author
 Sajjad Gholamipour
 DevOps Engineer
