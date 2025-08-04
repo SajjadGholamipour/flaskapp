@@ -8,7 +8,7 @@ This project is a sample **DevOps platform setup** featuring a FastAPI service w
 
 ## 📐 Architecture
 
-
+```text
                           +---------------------+
                           |     GitHub Repo     |
                           +---------------------+
@@ -33,7 +33,7 @@ This project is a sample **DevOps platform setup** featuring a FastAPI service w
                                             +-----------------------+
                                             |     Elasticsearch     |
                                             +-----------------------+
-
+```
 
 
 ---
