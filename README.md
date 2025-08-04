@@ -38,7 +38,7 @@ This project is a sample **DevOps platform setup** featuring a FastAPI service w
 
 
 
-📁 Project Structure
+## 📁 Project Structure
 
 ci.yml                # GitHub Actions pipeline
 main.py               # FastAPI app with Redis
@@ -54,7 +54,7 @@ README.md                 # You're here!
 
 
 
-🚀 Features
+## 🚀 Features
 
 🐍 FastAPI + Redis key-value API
 
@@ -72,7 +72,7 @@ README.md                 # You're here!
 
 
 
-🧪 API Endpoints
+## 🧪 API Endpoints
 
 GET /
 - Returns the value of Redis key "example_key"
@@ -85,7 +85,7 @@ POST /write/{key}?value=xxx
 
 
 
-⚙️ CI/CD Pipeline
+## ⚙️ CI/CD Pipeline
 
 Tool: GitHub Actions
 Steps:
@@ -103,7 +103,7 @@ Steps:
 
 
 
-🐋 Docker Compose Services
+## 🐋 Docker Compose Services
 
 services:
 - web 
@@ -111,7 +111,7 @@ services:
 - fluentbit:
 - elasticsearch
 
-📝 Justifications
+## 📝 Justifications
 Area	                    Tool / Decision	                        Justification
 App Framework	            FastAPI	                                Fast, async-ready, OpenAPI built-in
 Caching	                    Redis	                                Simple, lightweight, ideal for key-value storage
@@ -121,7 +121,7 @@ Log Collection	            Fluent Bit	                            Lightweight, f
 Log Storage	                Elasticsearch	                        Scalable full-text search & log indexing
 Dockerfile Optimization	    Slim base, minimal COPY, multi stage	Smaller image size, faster build & deploy
 
-📦 Running Locally
+## 📦 Running Locally
 
 docker-compose up -d
 
@@ -135,7 +135,7 @@ curl http://localhost:9200/fluentbit/_search?pretty
 
 
 
-📚 Future Work
+## 📚 Future Work
 
  Add tools like watchtower to get latest version of app's image automatically
 
@@ -156,6 +156,6 @@ curl http://localhost:9200/fluentbit/_search?pretty
 
 
 
-👤 Author
+## 👤 Author
 Sajjad Gholamipour
 DevOps Engineer
