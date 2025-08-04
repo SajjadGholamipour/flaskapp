@@ -12,7 +12,7 @@ jobs:
     - name: Checkout repository
       uses: actions/checkout@v4
 
-    - name: Set lowercase owner name
+    - name: Set lowercase owner
       id: lowercase
       run: |
         echo "owner=$(echo '${{ github.repository_owner }}' | tr '[:upper:]' '[:lower:]')" >> $GITHUB_OUTPUT
@@ -39,7 +39,7 @@ jobs:
       uses: docker/build-push-action@v5
       with:
         context: .
-        file: ./Dockerfile
+        file: ./optimizedDockerFile
         push: true
         tags: ghcr.io/${{ steps.lowercase.outputs.owner }}/fastapi-app:latest
         cache-from: type=local,src=/tmp/.buildx-cache
