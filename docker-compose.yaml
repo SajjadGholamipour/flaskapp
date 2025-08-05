@@ -1,7 +1,7 @@
-version: '3.8'
 services:
   web:
     image: ghcr.io/sajjadgholamipour/fastapi-app:latest
+    restart: always
     ports:
       - "8000:8000"
     depends_on:
@@ -9,33 +9,65 @@ services:
     logging:
       driver: "fluentd"
       options:
-        fluentd-address: localhost:24224
+        fluentd-address: fluentbit:24224
+        fluentd-async-connect: "true"
         tag: web.logs
+    networks:
+      - app-network
 
   redis:
     image: redis:7
+    restart: always
     ports:
       - "6379:6379"
     logging:
       driver: "fluentd"
       options:
-        fluentd-address: localhost:24224
+        fluentd-address: fluentbit:24224
+        fluentd-async-connect: "true"
         tag: redis.logs
+    networks:
+      - app-network
+  
 
   fluentbit:
     image: cr.fluentbit.io/fluent/fluent-bit:2.2
+    container_name: fluentbit
+    restart: always
     volumes:
       - ./fluent-bit.conf:/fluent-bit/etc/fluent-bit.conf
       - ./parsers.conf:/fluent-bit/etc/parsers.conf
     ports:
       - "24224:24224"
       - "24224:24224/udp"
+    networks:
+      - app-network      
+    depends_on:
+      elasticsearch:
+        condition: service_healthy
 
   elasticsearch:
     image: elasticsearch:9.1.0
+    container_name: elasticsearch
+    restart: always
     environment:
       - discovery.type=single-node
       - xpack.security.enabled=false
       - ES_JAVA_OPTS=-Xms512m -Xmx512m
     ports:
       - "9200:9200"
+    networks:
+      - app-network
+    healthcheck:
+      test: curl --fail http://localhost:9200 || exit 1
+      interval: 10s
+      retries: 10
+      start_period: 30s
+      timeout: 5s
+
+
+
+
+networks:
+  app-network:
+    driver: bridge

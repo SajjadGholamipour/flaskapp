@@ -115,13 +115,13 @@ services:
 
 ## 📝 Justifications
 Area	                    Tool / Decision	                        Justification
-App Framework	            FastAPI	                                Fast, async-ready, OpenAPI built-in
-Caching	                    Redis	                                Simple, lightweight, ideal for key-value storage
-Image Registry  	        GHCR                                    Native to GitHub, integrated permissions
-CI/CD	                    GitHub Actions	                        Tight GitHub integration, YAML-based
-Log Collection	            Fluent Bit	                            Lightweight, fluentd-compatible, Elasticsearch output plugin
-Log Storage	                Elasticsearch	                        Scalable full-text search & log indexing
-Dockerfile Optimization	    Slim base, minimal COPY, multi stage	Smaller image size, faster build & deploy
+App Framework	             FastAPI	                                Fast, async-ready, OpenAPI built-in
+Caching	             Redis	                                Simple, lightweight, ideal for key-value storage
+Image Registry  	      GHCR                                    Native to GitHub, integrated permissions
+CI/CD	                    GitHub Actions	                         Tight GitHub integration, YAML-based
+Log Collection	      Fluent Bit	                         Lightweight, fluentd-compatible, Elasticsearch output plugin
+Log Storage	             Elasticsearch	                         Scalable full-text search & log indexing
+Dockerfile Optimization    Slim base, minimal COPY, multi stage    Smaller image size, faster build & deploy
 
 ## 📦 Running Locally
 
